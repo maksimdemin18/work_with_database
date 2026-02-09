@@ -75,3 +75,15 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 ```
+```
+sudo apt install -y postgresql postgresql-contrib
+sudo -u postgres createdb netology_import_phones
+sudo -u postgres psql -l | grep netology_import_phones
+sudo -u postgres psql
+psql -h 127.0.0.1 -U postgres -d netology_import_phones
+python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
+python manage.py import_phones
+python manage.py runserver
+```
